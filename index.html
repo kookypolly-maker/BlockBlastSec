@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>BlockBlast - Головоломка</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <div class="game-wrapper">
+        <div class="game-container">
+            <!-- Счёт в центре сверху -->
+            <div class="score-container">
+                <div class="score-value" id="scoreValue">0</div>
+            </div>
+
+            <!-- Шестерёнка отдельно -->
+            <div class="settings-btn" id="settingsBtn">
+                <span class="settings-icon">⚙️</span>
+            </div>
+
+            <!-- Модальное окно с настройками -->
+            <div class="settings-modal" id="settingsModal">
+                <div class="settings-content">
+                    <div class="settings-header">
+                        <h3>МЕНЮ</h3>
+                        <button class="close-settings" id="closeSettings">✕</button>
+                    </div>
+                    <div class="settings-options">
+                        <button class="settings-option" id="restartBtnModal">
+                            <span class="option-icon">⟳</span>
+                            <span>Новая игра</span>
+                        </button>
+                        <button class="settings-option" id="themeBtnModal">
+                            <span class="option-icon" id="modalThemeIcon">🌙</span>
+                            <span id="modalThemeText">Тёмная тема</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Сообщение о проигрыше -->
+            <div class="game-over-message" id="gameOverMessage">
+                <div class="message-content">
+                    <span class="message-icon">💀</span>
+                    <span class="message-text">Возможного хода больше нет</span>
+                    <button class="message-restart-btn" id="messageRestartBtn">⟳ Новая игра</button>
+                </div>
+            </div>
+
+            <div class="game-board">
+                <div class="grid-container">
+                    <div class="grid" id="gameGrid"></div>
+                    <div class="grid-preview" id="gridPreview"></div>
+                </div>
+            </div>
+
+            <div class="pieces-panel">
+                <div class="pieces-title">ФИГУРЫ</div>
+                <div class="pieces-area" id="piecesArea"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Призрачная фигура для перетаскивания -->
+    <div id="dragGhost" class="drag-ghost"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
